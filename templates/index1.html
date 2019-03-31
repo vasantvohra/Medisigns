@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col 14 m12 center">
             <h2>Lifestyle Disease Prediction </h2>
-            <p >Max Healthcare MH4</p>
+            <p ></p>
             <a href="{{url_for('life')}}" class="btn btn-primary btn-lg">Reset</a>
             <a href="{{url_for('preview')}}" class="btn btn-primary btn-lg">View Dataset</a>
         </div>
@@ -70,8 +70,9 @@
 
                   <div class="input-field">
                     <select id="smoking" name="smoking_input">
-                      <option value="0">Less than 5</option>
-                        <option value="1">Greater than 5</option>
+                      <option value="0">None</option>
+					  <option value="1">Less than 5</option>
+                        <option value="2">Greater than 5</option>
                        
                     </select>
                     <label for="role">How many times do you smoke in a month?</label>
@@ -79,8 +80,9 @@
 
                   <div class="input-field">
                     <select id="drinking" name="drinking_input">
-                      <option value="0">Less than 5</option>
-                        <option value="1">Greater than 5</option>
+                      <option value="0">None</option>
+					  <option value="1">Less than 5</option>
+                        <option value="2">Greater than 5</option>
                        
                     </select>
                     <label for="role">How many times do you drink in a month?</label>
