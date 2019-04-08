@@ -345,12 +345,12 @@ a:active {
 
   }
 
-  #modal:target{
+  #contact:target{
    opacity: 1;
    visibility: visible;
   }
 
-  #modal:target .modal__content{
+  #contact:target .modal__content{
    opacity: 1;
    visibility: visible;
   }
@@ -372,7 +372,7 @@ a:active {
    line-height: 1.5em;
   }
 
-.modal-open{
+.contact-open{
  display: inline-block;
  color: dodgerblue;
  margin: 2em;
