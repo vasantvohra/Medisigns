@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class="modal" id="contact">
+    <div class="modal" id="modal">
         <div class="modal__content">
           <a href="#" class="modal__close">&times;</a>
           <div class="container">
@@ -80,13 +80,13 @@
           <a href="{{url_for('about')}}">About</a>
         </li>
         <li>
-          <a href=""{{url_for('vision')}}">Vision</a>
+          <a href="{{url_for('vision')}}">Vision</a>
         </li>
         <li>
-          <a href="https://xrayclassify.herokuapp.com/">Services</a>
+          <a href="#services">Services</a>
         </li>
         <li>
-          <a href="#contact">Contact</a>
+          <a href="#modal">Contact</a>
         </li>
       </ul>
     </nav>
@@ -114,12 +114,13 @@
     <!-- Boxes Section -->
     <section class="boxes">
         <div class="box">
-            <span onclick="openNav()"> <i class="fas fa-user-nurse fa-4x"></i></span>
+         <a href="{{url_for('bot')}}">   <i class="fas fa-user-nurse fa-4x"></i></a>
        <h3>Talk to MediSign!!</h3> 
         <p>Your Personal Healthcare Assistant!</p>
       </div>
       <div class="box">
-          <i class="far fa-calendar fa-4x"></i>
+	  <a href="https://www.practo.com/prime-doctors?utm_source=google&utm_medium=cpc&utm_campaign=brand-search-practo-phrase&gclid=Cj0KCQjw4qvlBRDiARIsAHme6ouJhI_mzF1g6KAhCgWSRcdHOVSwjA5EdOfjexupsMSX_bw_TNCroKIaAt1aEALw_wcB">
+          <i class="far fa-hospital fa-4x"></i></a>
         <h3>Schedule an Appointment!</h3>
         <p>Schedule an Appointment with a nearby Local Doctor!?</p>
       </div>
@@ -130,12 +131,23 @@
         <h3>Predict Future Health Problems!</h3>
         <p>Based on your LifeStyle, predict future Health Problems!</p>
       </div>
+<div class="box">
+        <a href="https://xrayclassify.herokuapp.com/">
+        <i class="fas fa-x-ray fa-4x"></i></a>
+        <h3>Pneumonia Detection!</h3>
+        <p>Predict Pneumonia using Chest X-ray!</p>
+      </div>
       <div class="box">
           <i class="fas fa-phone-volume fa-4x"></i>
         <h3>Support</h3>
         <p><a href="tel:911">Call us @911</p></a>
       </div>
-    </section>
+    
+
+	
+</section>
+    
+
 
     <!-- Footer -->
     <footer>
