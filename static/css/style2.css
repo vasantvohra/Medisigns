@@ -18,6 +18,13 @@ body {
   line-height: 1.4;
 }
 
+.btn {
+  background: var(--dark);
+  color: var(--light);
+  padding: 0.6rem 1.3rem;
+  text-decoration: none;
+  border: 0;
+}
 
 img {
   max-width: 100%;
@@ -55,13 +62,85 @@ img {
 }
 
 
+/* The Overlay (background) */
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */    
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0); /* Black fallback color */
+  background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: absolute;
+  top: 10%; /* 25% from the top */
+  width: 100%; /* 100% width */
+   /* Centered text/links */
+  margin-top: 20px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  height: 100%;
+ 
+
+}
+
+
+a:link{
+  color: #333;
+}
+a:visited {
+  color: #333;
+}
+
+/* A link that is hovered on */
+a:hover {
+  color: #333;
+}
+
+/* A link that is selected */
+a:active {
+  color: #333;
+}
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+
+
+
 /* Top Container */
 .top-container {
   display: grid;
   grid-gap: 20px;
   grid-template-areas:
-    'showcase showcase top-box-a'
-    'showcase showcase top-box-a';
+    'showcase showcase showcase'
+    'showcase showcase showcase';
 }
 
 /* Showcase */
@@ -98,13 +177,55 @@ img {
   align-items: center;
   justify-items: center;
   box-shadow: var(--shadow);
-  padding: 1rem;
-  width: 100%;
+  padding: 1.5rem;
 }
 
+.top-box .price {
+  font-size: 2.5rem;
+}
 
 .top-box-a {
- grid-area: top-box-a;
+  grid-area: top-box-a;
+}
+
+.top-box-b {
+  grid-area: top-box-b;
+}
+
+/* Boxes */
+.boxes {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.box {
+  background: var(--primary);
+  text-align: center;
+  padding: 1.5rem 2rem;
+  box-shadow: var(--shadow);
+}
+
+/* Info */
+.info {
+  background: var(--primary);
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 3rem;
+}
+
+/* Portfolio */
+.portfolio {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.portfolio img {
+  width: 100%;
+  box-shadow: var(--shadow);
 }
 
 /* Footer */
@@ -121,7 +242,7 @@ footer {
   .top-container {
     grid-template-areas:
       'showcase showcase'
-      'top-box-a top-box-a';
+      'top-box-a top-box-b';
   }
 
   .showcase h1 {
@@ -143,17 +264,8 @@ footer {
   }
 }
 
-@media (max-width: 500px) {
-  .top-container {
-    grid-template-areas:
-      'showcase'
-      'top-box-a'
-      ;
-  }
-}
 
 
-/* ----- */
 .modal{
    background-color: rgba(0,0,0, .8);
    width:100%;
@@ -342,3 +454,11 @@ footer {
 }
 
 
+@media (max-width: 500px) {
+  .top-container {
+    grid-template-areas:
+      'showcase'
+      'top-box-a'
+      'top-box-b';
+  }
+}
