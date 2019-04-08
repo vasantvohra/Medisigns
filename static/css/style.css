@@ -86,6 +86,28 @@ img {
   
 }
 
+.showcase1 {
+  grid-area: showcase1;
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  background: white;
+}
+
+.top-container1 {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+    ' showcase1 '
+    ' showcase1 ';
+}
+
 .showcase h1 {
   font-size: 4rem;
   margin-bottom: 0;

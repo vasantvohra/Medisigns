@@ -24,7 +24,7 @@ def index():
 def life():
 	return render_template("index1.html")
 
-@app.route("/baymax")
+@app.route("/AIChatBot")
 def bot():
 	return render_template("bot.html")
 
