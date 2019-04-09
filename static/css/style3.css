@@ -1,0 +1,381 @@
+:root {
+  --primary: #ddd;
+  --dark: #333;
+  --light: #fff;
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+body, html{
+  height:100%;
+  margin:0;
+  font-size:16px;
+  font-family:"Lato", sans-serif;
+  font-weight:400;
+  line-height:1.8em;
+  color:#666;
+}
+
+/* Navigation */
+.main-nav ul {
+  display: grid;
+  grid-gap: 20px;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.main-nav a {
+  background: var(--primary);
+  display: block;
+  text-decoration: none;
+  padding: 0.8rem;
+  text-align: center;
+  color: var(--dark);
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow);
+}
+
+.main-nav a:hover {
+  background: var(--dark);
+  color: var(--light);
+}
+
+
+.pimg1, .pimg2, .pimg3, .pimg4{
+  position:relative;
+  opacity:0.70;
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+
+  /*
+    fixed = parallax
+    scroll = normal
+  */
+  background-attachment:fixed;
+}
+
+.pimg1{
+  background-image:url('../img/who.jpg');
+  min-height:100%;
+}
+
+.pimg2{
+  background-image:url('../img/pic.jpg');
+  min-height:100%;
+
+}
+
+.pimg3{
+  background-image:url('../img/pic3.jpg');
+  min-height:100%;
+}
+
+.pimg4{
+  background-image:url('../img/care.jpg');
+  min-height:100%;
+}
+
+.section{
+  text-align:center;
+  padding:50px 80px;
+}
+
+.section-light{
+  background-color:#f4f4f4;
+  color:#666;
+}
+
+.section-dark{
+  background-color:#282e34;
+  color:#ddd;
+}
+
+.ptext{
+  position:absolute;
+  top:30%;
+  left: 20px;
+  color:black;
+  font-size:18px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  font-weight: 1000;
+}
+
+.ptext .border{
+  background-color:#111;
+  color:#fff;
+  padding:20px;
+}
+
+.ptext .border.trans{
+  color:black;
+  background-color:transparent;
+}
+
+
+/* The Overlay (background) */
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */    
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0); /* Black fallback color */
+  background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: absolute;
+  top: 10%; /* 25% from the top */
+  width: 100%; /* 100% width */
+   /* Centered text/links */
+  margin-top: 20px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  height: 100%;
+ 
+
+}
+
+
+a:link{
+  color: #333;
+}
+a:visited {
+  color: #333;
+}
+
+/* A link that is hovered on */
+ a:hover {
+  color: #333;
+}
+
+/* A link that is selected */
+a:active {
+  color: #333;
+}
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+
+/* ----- */
+  .contact{
+   background-color: rgba(0,0,0, .8);
+   width:100%;
+   height: 100vh;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 10;
+   opacity: 0;
+   visibility: hidden;
+   transition: all .5s;
+   overflow-x: hidden;
+  }
+
+  .contact__content{
+   width: 100%;
+   height: 100%;
+   background-color:transparent;
+   position: fixed;
+   padding: 2em;
+   border-radius: 1em;
+   opacity: 0;
+   visibility: hidden;
+   transition: all .5s;
+   overflow-x: hidden;
+
+  }
+
+  #contact:target{
+   opacity: 1;
+   visibility: visible;
+  }
+
+  #contact:target .contact__content{
+   opacity: 1;
+   visibility: visible;
+  }
+
+  .contact__close{
+   color: black;
+   font-size: 3em;
+   position: absolute;
+   top: 10px;
+   right: 5%;
+  }
+
+  .contact__heading{
+   color: dodgerblue;
+   margin-bottom: 1em;
+  }
+
+  .contact__paragraph{
+   line-height: 1.5em;
+  }
+
+.contacts-open{
+ display: inline-block;
+ color: dodgerblue;
+ margin: 2em;
+}
+
+.container
+{
+    position: relative;
+    width: 1000px;
+    margin: 150px auto 0;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 440px;
+    grid-gap: 40px;
+
+}
+
+.container .card{
+    position: relative;
+    background: #000;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.container .card .img-box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+
+
+}
+
+
+
+.container .card:hover .img-box{
+  
+    opacity: 0.5;
+    
+
+}
+
+
+.container .card .img-box img {
+    
+    width: 100%;
+
+}
+
+.container .card .content{
+
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    bottom: -100%;
+    padding: 20px;
+    padding-top: 40px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: 0.54s;
+}
+
+.container .card:hover{
+    transform: translateY(-20px);
+    box-shadow: 0 20px 20px rgba(0,0,0,.2);
+
+}
+.container .card:hover .content{
+    bottom: 0;
+}
+
+.container .card:hover .content h2{
+   margin: 0 0 10px;
+   padding: 0;
+   color: white;
+   font-size: 20px;
+}
+
+.container .card:hover .content h2 span{
+    
+    color: white;
+    font-size: 16px;
+ }
+
+ .container .card:hover .content p{
+    margin: 0 0 10px;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+ }
+
+ .container .card:hover .content ul{
+    display: flex;
+    margin: 20px 0 0;
+    padding:0;
+    align-items: center;
+    justify-content: center;
+
+ }
+
+ .container .card .content ul li{
+     list-style: none;
+ }
+
+ .container .card .content ul li a{
+     color: #fff;
+     padding: 10px;
+     font-size: 18px;
+
+ }
+
+
+.container .card:nth-child(1) .content{
+
+    background: linear-gradient(0deg,#3a414c , transparent);
+}
+
+.container .card:nth-child(2) .content{
+
+    background: linear-gradient(0deg,#3a4a4c , transparent);
+}
+
+.container .card:nth-child(3) .content{
+
+    background: linear-gradient(0deg,#3a414c , transparent);
+}
+
+
+@media(max-width:568px){
+  .pimg1, .pimg2, .pimg3, .pimg4{
+    background-attachment:scroll;
+  }
+}
