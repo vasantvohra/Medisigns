@@ -2,19 +2,19 @@
 <html lang="en" >
 
 <head>
-  <link rel="icon" href="../static/img/favicon.ico">
   <meta charset="UTF-8">
   <title>Services</title>
   
   
   
-      <link rel="stylesheet" href="../static/css/style2.css">
+     <link rel="icon" href="../static/img/favicon.ico">
+	<link rel="stylesheet" href="../static/css/style4.css">
 
   
 </head>
 
 <body>
-   <div class="modal" id="modal">
+<div class="modal" id="contact">
         <div class="modal__content">
           <a href="#" class="modal__close">&times;</a>
           <div class="container">
@@ -71,6 +71,7 @@
             </div>
         </div>
      </div>
+      
 
   <div class="wrapper">
     <!-- Navigation -->
@@ -86,18 +87,46 @@
           <a href="{{url_for('services')}}">Services</a>
         </li>
         <li>
-          <a href="#modal">Contact</a>
+          <a href="#contact">Contact</a>
         </li>
       </ul>
     </nav>
 
     <!-- Top Container -->
     <section class="top-container">
-      <header class="showcase">
-        <h1>Medi-Signs!</h1>
-        <p>A Simple Web Based Platform for Healthcare Assistance!</p>
-      </header>
-          </section>
+	<div class="top-box top-box-a">
+        <h4>Disease Identification Bot</h4>
+        <p class="price">Uses State of the Art <br> Deep Learning Algorithms <br> To predict Diseases!</p>
+        <a href="{{url_for('bot')}}" class="btn">Access it!</a>
+      </div>
+	<div class="top-box top-box-b">
+        <h4>Pneumonia Detection</h4>
+        <p class="price">Uses Image Processing<br> To predict Pneumonia<br> Through Chest X-ray!</p>
+        <a href="https://xrayclassify.herokuapp.com/" class="btn">Predict Now!</a>
+      </div>
+
+            <div class="top-box top-box-c">
+        <h4>Mind Relaxation</h4>
+        <a href="" class="btn">Coming Soon!</a>
+      </div>
+      <div class="top-box top-box-d">
+        <h4>Pulse Monitor</h4>
+        <p class="price">Uses Image Processing<br> To Measure Pulse<br> Through Webcam!</p>
+        <a href="" class="btn">Check Pulse!</a>
+      </div>
+<div class="top-box top-box-e">
+        <h4>Diabetic Retinopathy!</h4>
+        <p class="price"></p>
+        <a href="" class="btn">Coming Soon!</a>
+      </div>
+<div class="top-box top-box-f">
+        <h4>LifeStyle Disease Prediction!</h4>
+        <p class="price">Uses Machine Learning<br> Algorithms to predict futre diseases!</p>
+        <a href="{{url_for('life')}}" class="btn">Try it Now!</a>
+      </div>
+
+    </section>
+
 
        <!-- Footer -->
     <footer>
